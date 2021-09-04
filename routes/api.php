@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/ebook','App\Http\Controllers\BookController@index');
 Route::post('/ebook', 'App\Http\Controllers\BookController@create');
 Route::put('/ebook/{id}', 'App\Http\Controllers\BookController@update');
 Route::delete('/ebook/{id}', 'App\Http\Controllers\BookController@delete');
+
+Route::get('/me', [AuthController::class, 'index']);
