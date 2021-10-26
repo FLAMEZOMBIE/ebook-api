@@ -14,12 +14,13 @@ class Book extends Migration
     public function up()
     {
         Schema::create('book', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
+            $table->id();
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')->references('id')->on('authors')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('title', 100);
             $table->text('description');
-            $table->string('author');
-            $table->string('publisher');
-            $table->time('date_of_issue');
+            $table->text('publisher');
+            $table->date('date_of_issue');
             $table->timestamps();
         });
     }

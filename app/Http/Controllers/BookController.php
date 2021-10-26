@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Http\Resources\BookResource;
+use App\Models\Authors;
+use Exception;
+use GuzzleHttp\Promise\Create;
+use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
 {
@@ -20,7 +25,7 @@ class BookController extends Controller
             
             'title' => 'required',
             'description' => 'required',
-            'author' => 'required',
+            'author_id' => 'required',
             'publisher' => 'required',
             'date_of_issue' => 'required'
 
@@ -38,7 +43,7 @@ class BookController extends Controller
             
             'title' => 'required',
             'description' => 'required',
-            'author' => 'required',
+            'author_id' => 'required',
             'publisher' => 'required',
             'date_of_issue' => 'required'
 

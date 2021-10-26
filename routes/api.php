@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
+use App\Models\Authors;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,9 @@ Route::put('/ebook/{id}', 'App\Http\Controllers\BookController@update');
 Route::delete('/ebook/{id}', 'App\Http\Controllers\BookController@delete');
 
 Route::get('/me', [AuthController::class, 'index']);
+
+Route::get('/authors', [AuthorController::class, 'index']);
+Route::post('/authors', [AuthorController::class, 'store']);
+Route::get('authors/{id}', [AuthorController::class, 'show']);
+Route::put('authors/{id}', [AuthorController::class, 'update']);
+Route::delete('authors/{id}', [AuthorController::class, 'destroy']);
