@@ -8,7 +8,7 @@ use App\Models\Book;
 
 class Authors extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable, HasApiTokens;
     protected $table = "authors";
     protected $fillable = [
         'name', 

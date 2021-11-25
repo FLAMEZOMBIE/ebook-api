@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorController;
 use App\Models\Authors;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,5 @@ Route::post('/authors', [AuthorController::class, 'store']);
 Route::get('authors/{id}', [AuthorController::class, 'show']);
 Route::put('authors/{id}', [AuthorController::class, 'update']);
 Route::delete('authors/{id}', [AuthorController::class, 'destroy']);
+
+Route::post('/login', [LoginController::class, 'store']);
